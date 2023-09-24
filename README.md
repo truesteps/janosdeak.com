@@ -1,4 +1,4 @@
-# logcic.com
+# janosdeak.com
 
 ## Development Server
 
