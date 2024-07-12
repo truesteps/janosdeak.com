@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 				},
 				{
 					property: 'og:url',
-					content: 'https://logcic.com'
+					content: 'https://janosdeak.com'
 				},
 				{
 					property: 'og:title',
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
 				},
 				{
 					property: 'og:image',
-					content: 'https://logcic.com/og_image.jpg'
+					content: 'https://janosdeak.com/og_image.jpg'
 				}
 			],
 			link: [
