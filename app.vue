@@ -65,23 +65,23 @@
 			</VueButton>
 		</div>
 
-		<VueCard class="mt-8">
+		<VueCard class="mt-4">
 			<p class="mx-auto max-w-xl text-left text-lg max-sm:text-sm leading-8 text-white">
-				Currently hacking marketing asset generation at
+				Contracted to help realize the web application ambitions of
 
-				<VueLink class="text-slate-200 no-underline opacity-40" href="#" title="Imagelance website link">
-					<VueIcon name="ri-loader-2-line" class="animate-spin-slow mr-[-4px]" />
-
-					imagelance.com
+				<VueLink href="https://www.futured.app" title="Futured.app website link">
+					futured.app
 				</VueLink>
 			</p>
 		</VueCard>
 
-		<p class="mx-auto mt-4 max-w-xl text-lg max-sm:text-md leading-8 text-white">
-			An ex pro-gamer wannabe turned programmer. Fullstack dev working with
+		<p class="mx-auto mt-4 max-w-xl text-lg max-sm:text-sm leading-8 text-white">
+			An ex pro-gamer wannabe turned programmer. Full-stack dev working with
 			<VueLink href="https://laravel.com/" title="Laravel website">Laravel</VueLink>,
-			<VueLink href="https://vuejs.org/" title="Vue website">Vue</VueLink> and
-			<VueLink href="https://nodejs.org/" title="Node website">Node</VueLink>. Fueled by shit tons of ☕.
+			<VueLink href="https://vuejs.org/" title="Vue website">Vue</VueLink>,
+			<VueLink href="https://nodejs.org/" title="Node website">Node</VueLink>
+			and <VueLink href="https://www.typescriptlang.org/" title="TypeScript website">TypeScript</VueLink>.
+			Fueled by shit tons of ☕.
 		</p>
 	</NuxtLayout>
 </template>

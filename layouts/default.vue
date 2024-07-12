@@ -16,7 +16,12 @@
 			</p>
 
 			<span class="block">
-				<a href="https://github.com/truesteps/janosdeak.com" target="_blank" rel="noopener nofollow" title="View source code">
+				<a
+					href="https://github.com/truesteps/janosdeak.com"
+					target="_blank"
+					rel="noopener nofollow"
+					title="View source code"
+				>
 					<VueIcon name="bi-github" />
 				</a>
 			</span>
