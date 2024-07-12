@@ -8,10 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.5.3"
+    "nuxt": "^3.12.3",
+    "sass": "^1.77.8"
   },
   "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.7.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "oh-vue-icons": "^1.0.0-rc3"
   }
 }

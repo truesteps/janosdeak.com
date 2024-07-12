@@ -61,5 +61,7 @@ export default defineNuxtConfig({
 
 	plugins: [
 		'~/plugins/ohVueIcons.ts',
-	]
+	],
+
+	compatibilityDate: '2024-07-12'
 });
