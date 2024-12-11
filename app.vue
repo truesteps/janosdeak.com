@@ -7,7 +7,7 @@
 
 <template>
 	<NuxtLayout>
-		<h2 class="text-4xl max-sm:text-3xl font-bold tracking-tight text-white text-center">
+		<div class="text-4xl max-sm:text-3xl font-bold tracking-tight text-white text-center">
 			<span class="block">
 				<img
 					class="inline-block h-[120px] w-[120px] max-sm:h-[100px] max-sm:w-[100px] rounded-full border border-4"
@@ -16,26 +16,26 @@
 				/>
 			</span>
 
-			<span class="block mt-4">
+			<h2 class="block mt-4">
 				Patrik Jánosdeák
-			</span>
+			</h2>
 
-			<h3 class="text-2xl max-sm:text-xl font-bold tracking-tight text-white">
+			<div class="text-2xl max-sm:text-xl font-bold tracking-tight text-white">
 				<div class="flex items-center">
 					<span class="px-2 max-sm:text-2xl">
 						👉
 					</span>
 
-					<span>
+					<h3>
 						Full-stack Developer
-					</span>
+					</h3>
 
 					<span class="px-2 max-sm:text-2xl">
 						👈
 					</span>
 				</div>
-			</h3>
-		</h2>
+			</div>
+		</div>
 
 		<div class="mt-4 flex items-center justify-center gap-x-4 gap-y-4">
 			<VueButton
