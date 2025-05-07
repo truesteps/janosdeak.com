@@ -1,11 +1,16 @@
 <script setup>
-	defineProps({
-		href: { type: String, default: '#' }
-	});
+defineProps({
+  href: { type: String, default: "#" },
+});
 </script>
 
 <template>
-	<a :href="href" class="underline underline-offset-2 text-green-400" :target="href !== '#' ? '_blank' : ''" rel="noopener nofollow">
-		<slot />
-	</a>
+  <a
+    :href="href"
+    :target="href !== '#' ? '_blank' : ''"
+    class="underline underline-offset-2 text-green-400"
+    rel="noopener nofollow"
+  >
+    <slot />
+  </a>
 </template>

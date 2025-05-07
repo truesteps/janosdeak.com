@@ -1,4 +1,4 @@
 [build]
 publish = "dist/"
 command = "yarn generate"
-environment = { NODE_VERSION = "18", HOST = "https://logcic.com", APP_ENV = "production" }
+environment = { NODE_VERSION = "18", HOST = "https://janosdeak.com", APP_ENV = "production" }
