@@ -67,13 +67,13 @@ export default defineNuxtConfig({
           color: "#26262b",
         },
       ],
+      htmlAttrs: {
+        lang: "en",
+      },
     },
   },
 
   modules: ["@nuxtjs/tailwindcss"],
 
   compatibilityDate: "2025-05-07",
-  devtools: {
-    enabled: false,
-  },
 });
