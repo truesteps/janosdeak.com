@@ -1,4 +1,4 @@
 [build]
 publish = "dist/"
-command = "yarn build"
-environment = { NODE_VERSION = "20", HOST = "https://janosdeak.com", NODE_ENV = "production" }
+command = "yarn build-only"
+environment = { NODE_VERSION = "20", HOST = "https://janosdeak.com", APP_ENV = "production" }
