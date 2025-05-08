@@ -15,16 +15,19 @@ const menuItems: MenuItem[] = [
     href: 'https://x.com/stepsovich',
     label: 'Twitter',
     icon: 'x',
+    title: "Patrik Jánosdeák's Twitter",
   },
   {
     href: 'https://linkedin.com/in/patrik-janosdeak',
     label: 'Linkedin',
     icon: 'linkedin',
+    title: "Patrik Jánosdeák's Linkedin",
   },
   {
     href: 'https://github.com/truesteps',
     label: 'Github',
     icon: 'github',
+    title: "Patrik Jánosdeák's Github",
   },
 ]
 
@@ -41,7 +44,7 @@ const onTypewriterDone = () => {
     <div class="terminal-nav">
       <header class="terminal-logo">
         <Prompt class="logo">
-          <Link href="https://janosdeak.com" class="typewriter">
+          <Link href="https://janosdeak.com" class="typewriter" title="Patrik Jánosdeák's website">
             <Typewriter text="Patrik Jánosdeák" @done="onTypewriterDone" />
           </Link>
         </Prompt>

@@ -10,7 +10,7 @@ import Link from './Link.vue'
     <Link
       href="https://github.com/truesteps/janosdeak.com"
       class="view-source-code-link"
-      title="View source code"
+      title="View source code on Github"
     >
       <Github :width="18" :height="18" />
     </Link>

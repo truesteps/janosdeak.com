@@ -8,6 +8,7 @@ export type MenuItem = {
   label: string
   href: string
   icon: 'x' | 'github' | 'linkedin'
+  title?: string
 }
 
 const icons = {
@@ -25,7 +26,7 @@ defineProps<{
   <nav class="terminal-menu">
     <ul>
       <li v-for="item in items" :key="item.href">
-        <Link :href="item.href" class="menu-item menu-item--flexing">
+        <Link :href="item.href" :title="item.title" class="menu-item menu-item--flexing">
           <component :is="icons[item.icon]" />
 
           {{ item.label }}
