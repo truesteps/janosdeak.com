@@ -37,11 +37,20 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
-.menu-item {
-  &.menu-item--flexing {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.terminal-menu {
+  .menu-item {
+    color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--background-color);
+    }
+
+    &.menu-item--flexing {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
   }
 }
 </style>

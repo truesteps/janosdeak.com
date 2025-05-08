@@ -44,9 +44,7 @@ const onTypewriterDone = () => {
     <div class="terminal-nav">
       <header class="terminal-logo">
         <Prompt class="logo">
-          <Link href="https://janosdeak.com" class="typewriter" title="Patrik Jánosdeák's website">
-            <Typewriter text="Patrik Jánosdeák" @done="onTypewriterDone" />
-          </Link>
+          <Typewriter text="Patrik Jánosdeák" @done="onTypewriterDone" />
         </Prompt>
       </header>
 

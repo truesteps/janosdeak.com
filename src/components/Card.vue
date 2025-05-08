@@ -18,6 +18,7 @@
 
   header {
     padding: 0.5em;
+    text-align: left;
   }
 }
 </style>
