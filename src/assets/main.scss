@@ -38,3 +38,12 @@
 .fade-leave-to {
   opacity: 0;
 }
+
+a.disabled {
+  color: var(--secondary-color);
+
+  &:hover {
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+}
