@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
+import Typewriter from './Typewriter.vue'
+import Link from './Link.vue'
 import Menu, { type MenuItem } from './Menu.vue'
 import Prompt from './Prompt.vue'
+
+const emit = defineEmits<{
+  (e: 'typewriterDone'): void
+}>()
 
 const menuItems: MenuItem[] = [
   {
@@ -19,6 +27,13 @@ const menuItems: MenuItem[] = [
     icon: 'github',
   },
 ]
+
+const showMenu = ref(false)
+
+const onTypewriterDone = () => {
+  showMenu.value = true
+  emit('typewriterDone')
+}
 </script>
 
 <template>
@@ -26,13 +41,15 @@ const menuItems: MenuItem[] = [
     <div class="terminal-nav">
       <header class="terminal-logo">
         <Prompt class="logo">
-          <a href="https://janosdeak.com" target="_blank" rel="noopener nofollow"
-            >Patrik Jánosdeák</a
-          >
+          <Link href="https://janosdeak.com" class="typewriter">
+            <Typewriter text="Patrik Jánosdeák" @done="onTypewriterDone" />
+          </Link>
         </Prompt>
       </header>
 
-      <Menu :items="menuItems" />
+      <Transition name="fade">
+        <Menu v-if="showMenu" :items="menuItems" />
+      </Transition>
     </div>
   </div>
 </template>

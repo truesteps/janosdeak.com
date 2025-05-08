@@ -1,5 +1,5 @@
 import 'terminal.css'
-import './assets/main.css'
+import './assets/main.scss'
 
 import { createApp } from 'vue'
 import App from './App.vue'
