@@ -5,29 +5,33 @@ import Link from './Link.vue'
 
 <template>
   <footer class="footer">
-    &copy; {{ new Date().getFullYear() }} Patrik Jánosdeák. All rights reserved.
+    <div class="footer__content">
+      &copy; {{ new Date().getFullYear() }} Patrik Jánosdeák. All rights reserved.
 
-    <Link
-      href="https://github.com/truesteps/janosdeak.com"
-      class="view-source-code-link"
-      title="View source code on Github"
-    >
-      <Github :width="18" :height="18" />
-    </Link>
+      <Link
+        href="https://github.com/truesteps/janosdeak.com"
+        class="view-source-code-link"
+        title="View source code on Github"
+      >
+        <Github :width="18" :height="18" />
+      </Link>
+    </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
 .footer {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
+  margin-top: auto;
+  padding: 20px 0;
+  width: 100%;
   font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
 
   .view-source-code-link {
     display: flex;

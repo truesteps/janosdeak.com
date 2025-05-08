@@ -23,6 +23,12 @@
   --display-h1-decoration: none;
 }
 
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease-in-out;
