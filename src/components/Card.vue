@@ -15,5 +15,9 @@
 <style lang="scss" scoped>
 .terminal-card {
   margin-bottom: var(--global-line-height);
+
+  header {
+    padding: 0.5em;
+  }
 }
 </style>
