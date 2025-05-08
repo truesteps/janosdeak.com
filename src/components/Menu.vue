@@ -40,6 +40,7 @@ defineProps<{
 .terminal-menu {
   .menu-item {
     color: var(--primary-color);
+    text-decoration: underline;
 
     &:hover {
       background-color: var(--primary-color);
