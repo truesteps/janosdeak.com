@@ -1,23 +1,38 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Card from './components/Card.vue'
+import Header from './components/Header.vue'
+import Link from './components/Link.vue'
+import Footer from './components/Footer.vue'
+</script>
 
 <template>
-  <div class="container">
-    <header>Patrik Jánosdeák</header>
+  <Header />
 
-    <div class="terminal-nav">
-      <div class="terminal-logo">
-        <div class="logo terminal-prompt">
-          <a href="https://janosdeak.com" target="_blank">👉 Full-stack Developer 👈</a>
-        </div>
-      </div>
+  <Card>
+    <template #title>
+      Debugging more packages than I ship at
+      <Link href="https://mailstep.cz" class="mailstep-link" title="Mailstep.cz website"
+        >mailstep.cz</Link
+      >
+    </template>
 
-      <div class="terminal-nav">
-        <ul>
-          <li></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    An ex pro-gamer wannabe turned programmer. 👉&nbsp;Full-stack dev&nbsp;👈 working with
+    <Link href="https://www.typescriptlang.org/" title="TypeScript website">TypeScript</Link>,
+    <Link href="https://nodejs.org/" title="Node website">Node</Link>,
+    <Link href="https://laravel.com/" title="Laravel website">Laravel</Link>
+    and <Link href="https://vuejs.org/" title="Vue website">Vue</Link>. Fueled by shit tons of ☕.
+  </Card>
+
+  <Footer />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.mailstep-link {
+  text-decoration: underline;
+  color: var(--invert-font-color);
+
+  &:hover {
+    background-color: var(--font-color);
+  }
+}
+</style>
