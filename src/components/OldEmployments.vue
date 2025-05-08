@@ -1,0 +1,15 @@
+<script setup lang="ts">
+import List from './List.vue'
+
+const items = [{ label: 'Imagelance' }, { label: 'Futured' }]
+</script>
+
+<template>
+  <div class="container">
+    <header>
+      <h2>Previously:</h2>
+    </header>
+
+    <List :items="items" />
+  </div>
+</template>

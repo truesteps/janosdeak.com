@@ -3,6 +3,7 @@ import Card from './components/Card.vue'
 import Header from './components/Header.vue'
 import Link from './components/Link.vue'
 import Footer from './components/Footer.vue'
+import OldEmployments from './components/OldEmployments.vue'
 </script>
 
 <template>
@@ -22,6 +23,8 @@ import Footer from './components/Footer.vue'
     <Link href="https://laravel.com/" title="Laravel website">Laravel</Link>
     and <Link href="https://vuejs.org/" title="Vue website">Vue</Link>. Fueled by shit tons of ☕.
   </Card>
+
+  <OldEmployments />
 
   <Footer />
 </template>
