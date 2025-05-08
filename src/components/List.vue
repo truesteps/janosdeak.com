@@ -9,7 +9,7 @@ const {
   items,
   sanitizeOptions = {
     allowedAttributes: {
-      a: ['href', 'class'],
+      a: ['href', 'class', 'target', 'rel'],
     },
   },
 } = defineProps<{
