@@ -15,7 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "sanitize-html": "^2.16.0",
+    "@vueuse/core": "^13.1.0",
     "terminal.css": "^0.7.5",
     "vue": "^3.5.13"
   },
