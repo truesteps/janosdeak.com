@@ -1,33 +1,95 @@
 <script setup lang="ts">
-import { useElementBounding } from '@vueuse/core'
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 
 const isVisible = defineModel<boolean>({ default: false })
 
 const triggerEl = ref<HTMLDivElement>()
 const tooltipEl = ref<HTMLDivElement>()
+const boundingRect = ref<DOMRect>()
 
-const { width: triggerWidth, top: triggerTop, left: triggerLeft } = useElementBounding(triggerEl)
 const tooltipOffsetHeight = computed(() => tooltipEl.value?.offsetHeight ?? 0)
+const tooltipWidth = computed(() => tooltipEl.value?.offsetWidth ?? 0)
+
 const tooltipTop = computed(() => {
-  if (!triggerWidth.value) {
+  if (!boundingRect.value?.width || !tooltipEl.value) {
     return '0px'
   }
 
-  return `${triggerTop.value - tooltipOffsetHeight.value - 7}px`
+  return `${boundingRect.value.top - tooltipOffsetHeight.value - 7}px`
 })
+
 const tooltipLeft = computed(() => {
-  if (!triggerWidth.value || !tooltipEl.value) {
+  if (!boundingRect.value?.width || !tooltipEl.value) {
     return '0px'
   }
 
-  const left = triggerLeft.value + triggerWidth.value / 2 - tooltipEl.value.offsetWidth / 2
+  const triggerCenter = boundingRect.value.left + boundingRect.value.width / 2
+  const tooltipHalfWidth = tooltipWidth.value / 2
+  const windowWidth = window.innerWidth
 
+  // Calculate the ideal position (centered on trigger)
+  let left = triggerCenter - tooltipHalfWidth
+
+  // Adjust if tooltip would overflow left edge
   if (left < 0) {
-    return '0px'
+    left = 0
+  }
+  // Adjust if tooltip would overflow right edge
+  else if (left + tooltipWidth.value > windowWidth) {
+    left = windowWidth - tooltipWidth.value
   }
 
   return `${left}px`
+})
+
+const arrowLeft = computed(() => {
+  if (!boundingRect.value?.width || !tooltipEl.value) {
+    return '50%'
+  }
+
+  const triggerCenter = boundingRect.value.left + boundingRect.value.width / 2
+  const currentLeft = parseFloat(tooltipLeft.value)
+
+  // Calculate how far the arrow should be from the left edge of the tooltip
+  const arrowOffset = triggerCenter - currentLeft - 5 // 5px is half the arrow width
+
+  return `${arrowOffset}px`
+})
+
+const updateBoundingRect = () => {
+  if (!triggerEl.value) {
+    return
+  }
+
+  boundingRect.value = triggerEl.value.getBoundingClientRect()
+}
+
+onMounted(() => {
+  if (!triggerEl.value) {
+    return
+  }
+
+  updateBoundingRect()
+
+  const resizeObserver = new ResizeObserver(updateBoundingRect)
+  resizeObserver.observe(triggerEl.value)
+
+  const mutationObserver = new MutationObserver(updateBoundingRect)
+  mutationObserver.observe(triggerEl.value, {
+    attributes: true,
+    childList: true,
+    subtree: true,
+  })
+
+  window.addEventListener('scroll', updateBoundingRect, { passive: true })
+  window.addEventListener('resize', updateBoundingRect, { passive: true })
+
+  onUnmounted(() => {
+    resizeObserver.disconnect()
+    mutationObserver.disconnect()
+    window.removeEventListener('scroll', updateBoundingRect)
+    window.removeEventListener('resize', updateBoundingRect)
+  })
 })
 </script>
 
@@ -66,10 +128,10 @@ const tooltipLeft = computed(() => {
     background-color: var(--background-color);
     border-right: 1px solid var(--secondary-color);
     border-bottom: 1px solid var(--secondary-color);
+    left: v-bind(arrowLeft);
     transform: rotate(45deg);
     position: absolute;
     bottom: -6px;
-    left: calc(50% - 6px);
   }
 
   &__trigger {
