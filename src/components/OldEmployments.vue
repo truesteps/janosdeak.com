@@ -29,7 +29,7 @@ import Tooltip from './Tooltip.vue'
         <Tooltip>
           <a href="#" class="disabled">Isobar</a>
 
-          <template #content> Nothing to do with the weather, just another agency job </template>
+          <template #content> Mapping out marketing wins, not weather patterns </template>
         </Tooltip>
       </li>
 
@@ -38,9 +38,7 @@ import Tooltip from './Tooltip.vue'
         <Tooltip>
           <a href="#" class="disabled">Bistro Agency</a>
 
-          <template #content>
-            You might get it confused with a food truck, but it was a bona fide agency
-          </template>
+          <template #content> Where the only thing cooking is innovative ideas </template>
         </Tooltip>
       </li>
     </ul>
