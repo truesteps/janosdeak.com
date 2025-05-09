@@ -22,7 +22,7 @@ import Link from './Link.vue'
 <style lang="scss" scoped>
 .footer {
   margin-top: auto;
-  padding: 20px 0;
+  padding: 10px 0;
   width: 100%;
   font-size: 12px;
 

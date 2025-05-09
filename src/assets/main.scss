@@ -23,8 +23,13 @@
   --display-h1-decoration: none;
 }
 
+html,
+body,
 #app {
-  min-height: 100vh;
+  height: 100%;
+}
+
+#app {
   display: flex;
   flex-direction: column;
 }
