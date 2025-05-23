@@ -5,6 +5,7 @@ import Card from './components/Card.vue'
 import Header from './components/Header.vue'
 import Link from './components/Link.vue'
 import Footer from './components/Footer.vue'
+import LanguagesUsed from './components/LanguagesUsed.vue'
 import OldEmployments from './components/OldEmployments.vue'
 
 const showElements = ref(false)
@@ -30,6 +31,10 @@ const showElements = ref(false)
         and <Link href="https://vuejs.org/" title="Vue website">Vue</Link>. Fueled by shit tons of
         ☕.
       </Card>
+    </Transition>
+
+    <Transition name="fade">
+      <LanguagesUsed v-if="showElements" />
     </Transition>
 
     <Transition name="fade">

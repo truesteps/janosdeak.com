@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 
 import Typewriter from './Typewriter.vue'
-import Link from './Link.vue'
 import Menu, { type MenuItem } from './Menu.vue'
 import Prompt from './Prompt.vue'
 

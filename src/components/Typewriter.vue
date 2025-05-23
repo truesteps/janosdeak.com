@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 
-const { text, speed = 100 } = defineProps<{
+const {
+  text,
+  speed = 100,
+  element = 'span',
+} = defineProps<{
   text: string
   speed?: number
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
 }>()
 
 const emit = defineEmits<{
@@ -24,9 +29,17 @@ onMounted(() => {
 
     displayText.value += splitText.shift()
   }, speed)
+
+  onUnmounted(() => {
+    if (!interval) {
+      return
+    }
+
+    clearInterval(interval)
+  })
 })
 </script>
 
 <template>
-  <span>{{ displayText }}</span>
+  <component :is="element" class="typewriter">{{ displayText }}</component>
 </template>

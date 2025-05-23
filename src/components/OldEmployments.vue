@@ -5,7 +5,7 @@ import Tooltip from './Tooltip.vue'
 <template>
   <div class="container">
     <header>
-      <h2>Previously:</h2>
+      <h2>Previous employments:</h2>
     </header>
 
     <ul>
