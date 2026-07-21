@@ -11,4 +11,4 @@ Personal portfolio
 
 ## Development
 - clone repo
-- `yarn install && yarn dev`
+- `npm install && npm run dev`
