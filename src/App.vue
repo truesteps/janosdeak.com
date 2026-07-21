@@ -8,15 +8,15 @@ import Footer from './components/Footer.vue'
 import LanguagesUsed from './components/LanguagesUsed.vue'
 import OldEmployments from './components/OldEmployments.vue'
 
-const showElements = ref(false)
+const revealed = ref(false)
 </script>
 
 <template>
   <main class="content">
-    <Header @typewriterDone="showElements = true" />
+    <Header @typewriterDone="revealed = true" />
 
     <Transition name="fade">
-      <Card v-if="showElements">
+      <Card v-show="revealed">
         <template #title>
           Debugging more packages than I ship at
           <Link href="https://mailstep.cz" class="mailstep-link" title="Mailstep.cz website"
@@ -29,16 +29,17 @@ const showElements = ref(false)
         <Link href="https://nodejs.org/" title="Node website">Node</Link>,
         <Link href="https://laravel.com/" title="Laravel website">Laravel</Link>
         and <Link href="https://vuejs.org/" title="Vue website">Vue</Link>. Fueled by shit tons of
-        ☕.
+        ☕. Currently pouring the leftover caffeine into co-founding
+        <Link href="https://rodly.cz" title="Rodly website">Rodly</Link>.
       </Card>
     </Transition>
 
     <Transition name="fade">
-      <LanguagesUsed v-if="showElements" />
+      <LanguagesUsed v-show="revealed" />
     </Transition>
 
     <Transition name="fade">
-      <OldEmployments v-if="showElements" />
+      <OldEmployments v-show="revealed" />
     </Transition>
   </main>
 

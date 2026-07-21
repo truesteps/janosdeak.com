@@ -12,7 +12,7 @@ const emit = defineEmits<{
 const menuItems: MenuItem[] = [
   {
     href: 'https://x.com/stepsovich',
-    label: 'Twitter',
+    label: 'X',
     icon: 'x',
     title: "Patrik Jánosdeák's Twitter",
   },
@@ -43,12 +43,12 @@ const onTypewriterDone = () => {
     <div class="terminal-nav">
       <header class="terminal-logo">
         <Prompt class="logo">
-          <Typewriter text="Patrik Jánosdeák" @done="onTypewriterDone" />
+          <Typewriter text="Patrik Jánosdeák" element="h1" @done="onTypewriterDone" />
         </Prompt>
       </header>
 
       <Transition name="fade">
-        <Menu v-if="showMenu" :items="menuItems" />
+        <Menu v-show="showMenu" :items="menuItems" />
       </Transition>
     </div>
   </div>

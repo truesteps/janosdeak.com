@@ -15,12 +15,17 @@ const emit = defineEmits<{
   (e: 'done'): void
 }>()
 
-const splitText = text.split('')
+const displayText = ref(text)
+const started = ref(false)
 
-const displayText = ref('')
+let interval: ReturnType<typeof setInterval> | undefined
 
 onMounted(() => {
-  const interval = setInterval(() => {
+  const splitText = text.split('')
+  displayText.value = ''
+  started.value = true
+
+  interval = setInterval(() => {
     if (splitText.length === 0) {
       clearInterval(interval)
       emit('done')
@@ -29,17 +34,31 @@ onMounted(() => {
 
     displayText.value += splitText.shift()
   }, speed)
+})
 
-  onUnmounted(() => {
-    if (!interval) {
-      return
-    }
-
-    clearInterval(interval)
-  })
+onUnmounted(() => {
+  clearInterval(interval)
 })
 </script>
 
 <template>
-  <component :is="element" class="typewriter">{{ displayText }}</component>
+  <component :is="element" class="typewriter" :class="{ 'typewriter--ready': started }">{{
+    displayText
+  }}</component>
 </template>
+
+<style lang="scss" scoped>
+.typewriter {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  font-size: inherit;
+  font-weight: inherit;
+  visibility: hidden;
+}
+
+.typewriter--ready {
+  visibility: visible;
+}
+</style>

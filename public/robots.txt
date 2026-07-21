@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janosdeak.com/sitemap.xml
