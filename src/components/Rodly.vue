@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Link from './Link.vue'
 import ProjectCard from './ProjectCard.vue'
-import RodlyLogo from './Icons/Rodly.vue'
 
 const features = [
   'Live sharing',
@@ -22,7 +21,7 @@ const features = [
     status="Coming soon to the App Store and Google Play"
   >
     <template #icon>
-      <RodlyLogo :width="26" :height="25" />
+      <img src="/rodly-icon.png" alt="" width="64" height="64" />
     </template>
 
     <p>

@@ -62,6 +62,35 @@ const scrub = (event: PointerEvent) => {
 
   activeHour.value = Math.round(progress * HOURS)
 }
+
+let touchOrigin: { x: number; y: number } | undefined
+let touchAxis: 'x' | 'y' | undefined
+
+const startTouch = (event: TouchEvent) => {
+  const touch = event.touches.item(0)
+
+  touchOrigin = touch ? { x: touch.clientX, y: touch.clientY } : undefined
+  touchAxis = undefined
+}
+
+const lockHorizontalTouch = (event: TouchEvent) => {
+  const touch = event.touches.item(0)
+
+  if (!touch || !touchOrigin || !event.cancelable) {
+    return
+  }
+
+  const dx = Math.abs(touch.clientX - touchOrigin.x)
+  const dy = Math.abs(touch.clientY - touchOrigin.y)
+
+  if (!touchAxis && dx + dy > 0) {
+    touchAxis = dx > dy ? 'x' : 'y'
+  }
+
+  if (touchAxis === 'x') {
+    event.preventDefault()
+  }
+}
 </script>
 
 <template>
@@ -79,6 +108,8 @@ const scrub = (event: PointerEvent) => {
       aria-label="Sample meteogram of temperature and rain over the next 72 hours"
       @pointerdown="scrub"
       @pointermove="scrub"
+      @touchstart.passive="startTouch"
+      @touchmove="lockHorizontalTouch"
     >
       <svg :viewBox="`0 0 ${WIDTH} ${HEIGHT}`" preserveAspectRatio="none" aria-hidden="true">
         <defs>

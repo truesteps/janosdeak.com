@@ -58,15 +58,11 @@ defineProps<{
   }
 
   &__icon {
-    display: flex;
     flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
     width: 64px;
     height: 64px;
     border-radius: 14px;
     overflow: hidden;
-    background-color: var(--primary-color);
 
     :slotted(img) {
       display: block;

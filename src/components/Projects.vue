@@ -35,11 +35,24 @@ const goTo = (index: number) => {
     behavior: prefersReducedMotion ? 'auto' : 'smooth',
   })
 }
+
+const revealFocusedCard = ({ target }: FocusEvent) => {
+  if (!track.value || !(target instanceof Node)) {
+    return
+  }
+
+  goTo(Array.from(track.value.children).findIndex((card) => card.contains(target)))
+}
 </script>
 
 <template>
   <div class="container projects">
-    <div ref="track" class="projects__track" @scroll.passive="updateActiveIndex">
+    <div
+      ref="track"
+      class="projects__track"
+      @scroll.passive="updateActiveIndex"
+      @focusin="revealFocusedCard"
+    >
       <component :is="project" v-for="(project, index) in projects" :key="index" />
     </div>
 
@@ -114,6 +127,8 @@ const goTo = (index: number) => {
       margin-bottom: var(--global-line-height);
 
       .btn[aria-disabled='true'] {
+        border-color: var(--font-color);
+        color: var(--font-color);
         opacity: 0.4;
         cursor: default;
       }
