@@ -7,6 +7,7 @@ import Link from './components/Link.vue'
 import Footer from './components/Footer.vue'
 import LanguagesUsed from './components/LanguagesUsed.vue'
 import OldEmployments from './components/OldEmployments.vue'
+import Projects from './components/Projects.vue'
 
 const revealed = ref(false)
 </script>
@@ -25,13 +26,17 @@ const revealed = ref(false)
         </template>
 
         An ex pro-gamer wannabe turned programmer. 👉&nbsp;Full-stack dev&nbsp;👈 working with
+        <Link href="https://www.php.net/docs.php" title="PHP documentation">PHP</Link>,
         <Link href="https://www.typescriptlang.org/" title="TypeScript website">TypeScript</Link>,
         <Link href="https://nodejs.org/" title="Node website">Node</Link>,
         <Link href="https://laravel.com/" title="Laravel website">Laravel</Link>
         and <Link href="https://vuejs.org/" title="Vue website">Vue</Link>. Fueled by shit tons of
-        ☕. Currently pouring the leftover caffeine into co-founding
-        <Link href="https://rodly.cz" title="Rodly website">Rodly</Link>.
+        ☕.
       </Card>
+    </Transition>
+
+    <Transition name="fade">
+      <Projects v-show="revealed" />
     </Transition>
 
     <Transition name="fade">

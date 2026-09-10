@@ -9,8 +9,8 @@ import LanguageUsed from './LanguageUsed.vue'
     </header>
 
     <div class="languages-used__languages">
-      <LanguageUsed label="TypeScript" color="#3178c6" :colspan="3" />
-      <LanguageUsed label="PHP" color="#777bb4" :colspan="3" />
+      <LanguageUsed label="PHP" color="#777bb4" :colspan="4" />
+      <LanguageUsed label="TypeScript" color="#3178c6" :colspan="2" />
       <LanguageUsed label="SCSS" color="#c6538c" :colspan="2" />
       <LanguageUsed label="Python" color="#3572a5" :colspan="1" />
       <LanguageUsed label="Bash" color="#d62728" :colspan="1" />
