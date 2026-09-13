@@ -18,7 +18,7 @@ const features = [
     label="Currently co-founding"
     name="Rodly"
     tagline="Write. Share. Sort. Shop."
-    status="Coming soon to the App Store and Google Play"
+    status="Available on the App Store and Google Play"
   >
     <template #icon>
       <img src="/rodly-icon.png" alt="" width="64" height="64" />
@@ -36,6 +36,14 @@ const features = [
     <template #actions>
       <Link href="https://rodly.cz" rel="noopener" class="btn btn-primary" title="Rodly website">
         Visit rodly.cz
+      </Link>
+      <Link
+        href="https://rodly.cz/install"
+        rel="noopener"
+        class="btn btn-ghost"
+        title="Get Rodly on the App Store or Google Play"
+      >
+        Get the app
       </Link>
     </template>
   </ProjectCard>
